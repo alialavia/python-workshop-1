@@ -47,15 +47,15 @@ word_weights = {
 }
 
 # Calculate the average value of words in list_of_words
-def get_average_word_weight(list_of_words):
+def get_average_word_weight(list_of_words):  
 	number_of_words = len(list_of_words)
-	sum_of_word_weights = 0.0
+	sum_of_word_weights = 0.0  
 	for w in list_of_words:
 	    stemmed_word = stemmer.stem(w)
 	    if stemmed_word in word_weights:
 	        sum_of_word_weights += word_weights[stemmed_word]
-	    #else:
-	        #print ('"' + stemmed_word + '": 0.0,')
+	    else:
+	        print ('"' + stemmed_word + '": 0.0,')
 
 	return sum_of_word_weights / number_of_words
 

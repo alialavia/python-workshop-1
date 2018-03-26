@@ -1,0 +1,13 @@
+
+
+
+Windows:
+py -m venv .
+Scripts\activate
+
+Mac:
+
+python3.6 -m venv .
+. bin/activate
+
+sudo "/Applications/Python 3.6/Install Certificates.command"
