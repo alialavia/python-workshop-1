@@ -8,7 +8,7 @@ based on that.
 
 """
 
-import nltk
+from nltk import word_tokenize
 from nltk.stem.porter import *
 
 stemmer = PorterStemmer()
