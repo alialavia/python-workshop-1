@@ -15,7 +15,7 @@ stemmer = PorterStemmer()
 
 # Break down a string into words
 def get_words(str):
-    return nltk.word_tokenize(str)
+    return word_tokenize(str)
 
 # Iterate through the words in the tweet string
 word_weights = { "thank": 1.0, "to": 0.0, "the": 0.0, "histor": 0.5, "cut": 0.0, "that": 0.0, 
