@@ -18,8 +18,13 @@ stemmer = PorterStemmer()
 def get_words(str):
     return word_tokenize(str)
 
+# Initialize word weights and read them from word_weights.json
+word_weights = {}
+with open("word_weights.json") as f: # open the json file, and put its handler in variable f
+    word_weights = json.load(f)      # read the content of the file into 
+
 # Calculate the average value of words in list_of_words
-def get_average_word_weight(list_of_words):  
+def get_average_word_weight(list_of_words, word_weights):  
     number_of_words = len(list_of_words)
     sum_of_word_weights = 0.0  
     for w in list_of_words:
@@ -31,15 +36,11 @@ def get_average_word_weight(list_of_words):
 
     return sum_of_word_weights / number_of_words
 
-# Initialize word weights and read them from word_weights.json
-word_weights = {}
-with open("word_weights.json") as f: # open the json file, and put its handler in variable f
-    word_weights = json.load(f)      # read the content of the file into 
 
 tweet_string = "Thanks to the historic TAX CUTS that I signed into law, your paychecks are going way UP, your taxes are going way DOWN, and America is once again OPEN FOR BUSINESS!"
 
 words = get_words(tweet_string)
-avg_tweet_weight = get_average_word_weight(words)
+avg_tweet_weight = get_average_word_weight(words, word_weights)
 
 print ("The weight of the tweet is " + str(avg_tweet_weight))
 
